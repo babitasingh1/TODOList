@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 class ListItem extends Component {
-    
-    render() { 
-        const todoitem = this.props.items;
-        return ( 
-                        
-               <button  className = "btn btn-secondary btn-sm"
-               onClick = {()=> this.props.onDelete(todoitem)}>Delete</button>
-            
-         );
-    }
+  render() {
+    const { items, onDelete } = this.props;
+    return (
+      <button
+        className="btn btn-secondary btn-sm"
+        onClick={() => onDelete(items)}
+      >
+        Delete
+      </button>
+    );
+  }
 }
- 
+
 export default ListItem;
