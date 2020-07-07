@@ -10,7 +10,7 @@ export default function App() {
 
     if (inputtext.value === "") {
       alert("Please enter a valid value");
-    } else if (list.find((list) => list === inputtext.value)) {
+    } else if (list.find((list) => list.toLowerCase() === (inputtext.value).toLowerCase())) {
       alert("This item is already in your list");
     } else {
       setList(list.concat(inputtext.value));

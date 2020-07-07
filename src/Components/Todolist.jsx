@@ -7,9 +7,9 @@ function ToDoList(props) {
       <ul className="list-group">
         {props.list.map((item, index) => (
           <li className="list-group-item" key={index}>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <div className="input-group-text">
                   <input
                     type="checkbox"
                     aria-label="Checkbox for following text input"
@@ -19,7 +19,7 @@ function ToDoList(props) {
               <input
                 type="text"
                 value={item}
-                class="form-control"
+                className="form-control"
                 aria-label="Text input with checkbox"
               ></input>
             </div>
