@@ -10,7 +10,9 @@ export default function App() {
 
     if (inputtext.value === "") {
       alert("Please enter a valid value");
-    } else if (list.find((list) => list.toLowerCase() === (inputtext.value).toLowerCase())) {
+    } else if (
+      list.find((list) => list.toLowerCase() === inputtext.value.toLowerCase())
+    ) {
       alert("This item is already in your list");
     } else {
       setList(list.concat(inputtext.value));
@@ -20,6 +22,15 @@ export default function App() {
   }
 
   function handleDelete(removedItem) {
+    const boxes = document.getElementsByClassName("formchk-control");
+
+    const index = list.indexOf(removedItem);
+    const box = boxes[index];
+
+    const row = box.parentNode;
+
+    row.remove();
+
     setList(list.filter((list) => list !== removedItem));
   }
 

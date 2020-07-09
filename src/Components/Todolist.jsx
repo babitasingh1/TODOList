@@ -12,6 +12,7 @@ function ToDoList(props) {
                 <div className="input-group-text">
                   <input
                     type="checkbox"
+                    className="formchk-control"
                     aria-label="Checkbox for following text input"
                   ></input>
                 </div>
