@@ -1,10 +1,28 @@
-import React from "react";
-import Listitem from "./Listitem";
+import React,{ useState } from "react";
+
+
+
 
 function ToDoList(props) {
+  
+  const [checked , setCheck] = useState();
+
+  function handleChange() {
+    console.log('clicked');
+    setCheck(!checked );
+    //console.log('clicked');
+    //const box = document.getElementsByClassName('formchk-control');
+    //console.log(box);
+    //console.log(checkedItem.checked);
+    //checkedItem.value = !checkedItem.value;
+     //checkedItem.checked = !checkedItem.checked;
+  }
+   
+  
+  
   return (
     <div>
-      <ul className="list-group">
+      <ul className="list-group" id="mylist">
         {props.list.map((item, index) => (
           <li className="list-group-item" key={index}>
             <div className="input-group mb-3">
@@ -12,8 +30,13 @@ function ToDoList(props) {
                 <div className="input-group-text">
                   <input
                     type="checkbox"
+                    id = "checkbox"
                     className="formchk-control"
                     aria-label="Checkbox for following text input"
+                    checked = {checked}
+                    //checked={props.checked}
+                    onChange = {handleChange}
+                    //onChange={() => props.onChange(item)}
                   ></input>
                 </div>
               </div>
@@ -24,8 +47,7 @@ function ToDoList(props) {
                 aria-label="Text input with checkbox"
               ></input>
             </div>
-
-            <Listitem items={item} onDelete={props.onDelete} />
+            <button onClick={() => props.onDelete(item)}>Delete</button>
           </li>
         ))}
       </ul>
