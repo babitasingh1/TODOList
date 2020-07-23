@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Todolist from "./Components/Todolist";
-import "./App.css";
 
 export default function App() {
   const [listitem, setlistitem] = useState([]);
@@ -45,9 +44,7 @@ export default function App() {
         submit
       </button>
       <Todolist
-        //list={list}
         list={listitem}
-        //checked={checked}
         onDelete={handleDelete}
         onChange={handleChange}
       />
