@@ -12,6 +12,7 @@ function ToDoList(props) {
                   <input
                     type="checkbox"
                     id="checkbox"
+                    checked={item.done}
                     className="formchk-control"
                     aria-label="Checkbox for following text input"
                     onChange={() => {
@@ -20,10 +21,10 @@ function ToDoList(props) {
                   ></input>
                 </div>
               </div>
-              <input
+              <input 
                 type="text"
                 value={item.text}
-                className="form-control"
+                className="form-control task"
                 aria-label="Text input with checkbox"
                 style={{
                   textDecoration: item.done ? "line-through" : "none",

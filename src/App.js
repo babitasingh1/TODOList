@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Todolist from "./Components/Todolist";
+import "./App.css";
 
 export default function App() {
   const [listitem, setlistitem] = useState([]);
@@ -16,7 +17,7 @@ export default function App() {
     ) {
       alert("This item is already in your list");
     } else {
-      setlistitem([...listitem, { text: inputtext.value, id: Math.random() }]);
+      setlistitem([...listitem, { text: inputtext.value, id: Math.random(),done:false }]);
     }
 
     inputtext.value = "";
@@ -36,12 +37,13 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <h1>ToDoList</h1>
-      <input type="text" id="userinput"></input>
+      <h4 className="task">Add your tasks here</h4>
+      <input className="mr-1 inputText" type="text" id="userinput"></input>
 
-      <button onClick={handleSubmit} className="btn btn-secondary btn-sm">
-        submit
+      <button onClick={handleSubmit} className="btn btn-secondary btn-md addBtn">
+        Add
       </button>
       <Todolist
         list={listitem}
