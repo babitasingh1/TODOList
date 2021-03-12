@@ -20,5 +20,5 @@ You will also see any lint errors in the console.
 
 # Link in Netlify
 
-https://6047742dc58b06b96c573cd1--practicetodolist.netlify.app
+https://practicetodolist.netlify.app
 
